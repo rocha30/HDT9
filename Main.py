@@ -7,7 +7,7 @@ class Main:
         self.ejecutar_programa()
 
     def ejecutar_programa(self):
-        grafo_rutas = self.crear_grafo_desde_archivo("rutas.txt")
+        grafo_rutas = self.crear_grafo_desde_archivo("C:\Users\DELL\Desktop\U\Progra\HDT9\rutas.txt")
         interfaz = InterfazUser(grafo_rutas)
         estacion_salida = "Pueblo Paleta"
         interfaz.ver_mapa_destinos(estacion_salida)

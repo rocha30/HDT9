@@ -6,7 +6,7 @@ class Dijkstra:
 
     def calcular_rutas_mas_baratas(self, estacion_salida):
         rutas_mas_baratas = {}
-        for nodo in self.grafo.nodes():
+        for nodo in self.grafo.grafo.nodes():
             if nodo != estacion_salida:
                 costo = self.grafo.obtener_costo_ruta(estacion_salida, nodo)
                 rutas_mas_baratas[nodo] = costo

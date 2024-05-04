@@ -7,7 +7,7 @@ class Main:
         self.ejecutar_programa()
 
     def ejecutar_programa(self):
-        grafo_rutas = self.crear_grafo_desde_archivo("C:\Users\DELL\Desktop\U\Progra\HDT9\rutas.txt")
+        grafo_rutas = self.crear_grafo_desde_archivo("rutas.txt")
         interfaz = InterfazUser(grafo_rutas)
         estacion_salida = "Pueblo Paleta"
         interfaz.ver_mapa_destinos(estacion_salida)
@@ -18,8 +18,8 @@ class Main:
         grafo_rutas = GrafoRutas()
         with open(nombre_archivo) as archivo:
             for linea in archivo:
-                origen, destino, costo = linea.strip().split(', ')
-                ruta = Ruta(origen.strip('"'), destino.strip('"'), int(costo))
+                origen, destino, costo = linea.strip().split(',')
+                ruta = Ruta(origen.strip(''), destino.strip(''), int(costo))
                 grafo_rutas.agregar_ruta(ruta)
         return grafo_rutas
 

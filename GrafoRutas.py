@@ -12,7 +12,11 @@ class GrafoRutas:
         return list(self.grafo.neighbors(estacion_salida))
 
     def obtener_costo_ruta(self, origen, destino):
-        return nx.shortest_path_length(self.grafo, origen, destino, weight='weight')
+        try:
+            return nx.shortest_path_length(self.grafo, origen, destino, weight='weight')
+        except nx.NetworkXNoPath:
+            return float('inf')
+        
 
     def dibujar_grafo(self):
         nx.draw(self.grafo, with_labels=True, font_weight='bold')

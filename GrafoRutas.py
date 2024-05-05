@@ -1,4 +1,5 @@
 import networkx as nx # type: ignore
+import matplotlib.pyplot as plt
 
 class GrafoRutas:
     def __init__(self):
@@ -19,4 +20,14 @@ class GrafoRutas:
         
 
     def dibujar_grafo(self):
-        nx.draw(self.grafo, with_labels=True, font_weight='bold')
+        options = {
+            "font_size": 10,
+            "node_size": 2000,
+            "node_color": "skyblue",
+            "edgecolors": "gray",
+            "linewidths": 1,
+            "width": 1,
+        }
+        pos = nx.spring_layout(self.grafo, scale=3, center=(0, 0))
+        nx.draw(self.grafo,pos, with_labels=True, font_weight='bold', **options)
+        plt.show()

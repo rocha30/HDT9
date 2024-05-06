@@ -9,10 +9,15 @@ class Main:
     def ejecutar_programa(self):
         grafo_rutas = self.crear_grafo_desde_archivo("rutas.txt")
         interfaz = InterfazUser(grafo_rutas)
-        estacion_salida = "Pueblo Paleta"
-        interfaz.ver_mapa_destinos(estacion_salida)
-        interfaz.encontrar_mejores_rutas(estacion_salida)
-        grafo_rutas.dibujar_grafo()
+        try:
+            estacion_salida = input("Ingrese la estación de salida: ")
+            interfaz.ver_mapa_destinos(estacion_salida)
+            interfaz.encontrar_mejores_rutas(estacion_salida)
+            grafo_rutas.dibujar_grafo()
+        except:
+            print("La estación ingresada no existe en el grafo")
+
+        
 
     def crear_grafo_desde_archivo(self, nombre_archivo):
         grafo_rutas = GrafoRutas()

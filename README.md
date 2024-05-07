@@ -4,6 +4,9 @@ Este es un programa en Python que permite agendar viajes utilizando el algoritmo
 
 
 
+## Autores
+  Diego José López Campos
+  Mario Fernando Rocha López
 
 
 ## Requisitos
